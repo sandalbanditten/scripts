@@ -1,0 +1,2 @@
+#!/bin/sh
+ls -1 /home/notroot/Scripts/ | dmenu -l 32 -i -p "Run:" | bash

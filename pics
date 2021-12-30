@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Author: sandalbanditten
+# License: GPL v3.0
+
+# smart way
+folder="$(ls ~/Pictures/ | dmenu -l 16 -i -p 'Image folder:')"
+if [ $folder ]; then
+	image="$(ls ~/Pictures/$folder/* -1 | dmenu -l 16 -i -p 'Image:')"
+	if [ $image ]; then
+		imv $image -b '#2e3440'
+	fi
+fi
+# i suck at everything

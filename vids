@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Author: sandalbanditten
+#mpv License: GPL v3.0
+
+# smart way
+mpv "$(ls ~/Videos/* | dmenu -l 16 -i -p 'Watch:')"
