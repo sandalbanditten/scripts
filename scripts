@@ -1,2 +1,2 @@
 #!/bin/sh
-ls -1 /home/notroot/Scripts/ | dmenu -l 32 -i -p "Run:" | sh
+ls -1F /home/notroot/Scripts/ | grep '\*' | sed 's/\*//g' | dmenu -l 32 -i -p "Run:" | sh
