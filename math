@@ -1,6 +1,0 @@
-#!/bin/sh
-
-# Author: sandalbanditten
-# License: GPL v3.0
-
-zathura ~/School/Matematik/Teknisk\ Matematik\ 4.pdf ~/School/Matematik/Teknisk\ Matematik\ 4\ Facit.pdf
