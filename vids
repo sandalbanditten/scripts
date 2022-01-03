@@ -3,5 +3,7 @@
 # Author: sandalbanditten
 #mpv License: GPL v3.0
 
+set -xe
+
 # smart way
-mpv "$(ls ~/Videos/* | dmenu -l 16 -i -p 'Watch:')"
+mpv "$HOME/Videos/$(ls $HOME/Videos/* -1 | sed 's/\//\t/g' | cut -f5 | dmenu -l 16 -i -p 'Watch:')"
