@@ -2,7 +2,6 @@
 
 # Simple dmenu prompt to set audio level
 
-# level="$(printf "     " | dmenu -p "Audio level:")"
 level="$(printf "   " | dmenu -p "Audio level:")"
 
 case "${level#[+-]}" in
@@ -11,7 +10,7 @@ case "${level#[+-]}" in
 	(*)               ;;
 esac
 
-if [ $level -lt 101 ];
+if [ $level -le 100 ] && [ $level -ge 0 ];
 then
 	amixer -c 1 set Master "$level%" &> /dev/null
 else
