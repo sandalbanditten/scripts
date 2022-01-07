@@ -4,5 +4,6 @@
 #mpv License: GPL v3.0
 
 # smart way
-mpv "$HOME/Videos/$(ls $HOME/Videos/* -1 | cut -d'/' -f5 | cut -d'.' -f1 | dmenu -l 16 -i -p 'Watch:')"*
+vid="$(ls $HOME/Videos/ -1 | dmenu -l 16 -i -p 'Watch:')"
+[ "$vid" ] && mpv "$HOME/Videos/$vid"
 
