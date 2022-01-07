@@ -4,5 +4,5 @@
 # License: GPL v3.0
 
 # smart way
-folder="$(ls ~/Pictures/ | dmenu -l 16 -i -p 'Image folder:')"
-[ $folder ] && imv ~/Pictures/$folder/ -b '#2e3440'
+folder="$(ls $HOME/Pictures/ | dmenu -l 16 -i -p 'Image folder:')"
+[ $folder ] && imv $HOME/Pictures/$folder/ -b '#2e3440'
