@@ -4,4 +4,5 @@
 #mpv License: GPL v3.0
 
 # smart way
-mpv "$HOME/Videos/$(ls $HOME/Videos/* -1 | sed 's/\//\t/g' | cut -f5 | dmenu -l 16 -i -p 'Watch:')"
+mpv "$HOME/Videos/$(ls $HOME/Videos/* -1 | cut -d'/' -f5 | cut -d'.' -f1 | dmenu -l 16 -i -p 'Watch:')"*
+
