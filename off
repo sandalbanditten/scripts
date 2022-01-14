@@ -1,6 +1,6 @@
 #!/bin/sh
 
-action="$(printf 'Shut Down\nLock Screen\nQuit BSPWM' | dmenu -l 3 -i)"
+action="$(printf 'Shut Down\nLock Screen\nQuit BSPWM\nReload BSPWM' | dmenu -l 4 -i)"
 
 [ "$action" = "Shut Down" ] && answer="$(printf 'Yes\nNo' | dmenu -l 2 -i -p "Confirm:")"
 [ "$answer" = "Yes" ] && shutdown 0
@@ -10,3 +10,6 @@ action="$(printf 'Shut Down\nLock Screen\nQuit BSPWM' | dmenu -l 3 -i)"
 
 [ "$action" = "Quit BSPWM" ] && answer="$(printf 'Yes\nNo' | dmenu -l 2 -i -p "Confirm:")"
 [ "$answer" = "Yes" ] && bspc quit
+
+[ "$action" = "Reload BSPWM" ] && answer="$(printf 'Yes\nNo' | dmenu -l 2 -i -p "Confirm:")"
+[ "$answer" = "Yes" ] && bspc wm -r
