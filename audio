@@ -2,7 +2,8 @@
 
 # Simple dmenu prompt to set audio level
 
-level="$(printf "   " | dmenu -p "Audio level:")"
+cLvl="$(amixer -c 1 get Master | grep '%' | awk '{print $4}')"
+level="$(printf "   " | dmenu -p "$cLvl - Audio level:")"
 
 case "${level#[+-]}" in
 	(*[!0123456789]*) return 1 ;;
