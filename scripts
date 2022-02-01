@@ -1,2 +1,2 @@
 #!/bin/sh
-ls -1F ~/Scripts/ | grep '\*' | sed 's/\*//g' | dmenu -l 32 -i -p "Run:" | sh
+ls -1F ~/Code/Scripts/ | grep '\*' | sed 's/\*//g' | dmenu -l 32 -i -p "Run:" | sh
