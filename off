@@ -1,6 +1,6 @@
 #!/bin/sh
 
-action="$(printf 'Shut Down\nReboot\nLock Screen\nQuit BSPWM\nReload BSPWM' | dmenu -l 4 -i)"
+action="$(printf 'Shut Down\nReboot\nLock Screen\nQuit BSPWM\nReload BSPWM' | dmenu -l 5 -i)"
 
 [ "$action" = "Shut Down" ] && answer="$(printf 'Yes\nNo' | dmenu -l 2 -i -p "Confirm:")"
 [ "$answer" = "Yes" ] && shutdown 0
