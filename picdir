@@ -5,4 +5,4 @@
 
 # smart way
 folder="$(ls $HOME/Pictures/ | dmenu -l 16 -i -p 'Image folder:')"
-[ $folder ] && imv $HOME/Pictures/$folder/ -b '#2e3440'
+[ $folder ] && imv -b '#2e3440' -- $HOME/Pictures/$folder/
