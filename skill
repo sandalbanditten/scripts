@@ -5,8 +5,6 @@
 
 # smart way
 selected="$(ps --user "$USER" -F | \
-	# doesn't print some stuff, for space and safety
-	grep -vi "firefox\|discord\|dbus\|xinit" | \
 	dmenu -l 16 -i -p "Process to kill:" "$@" | \
 	awk '{print $2" "$11}')";
 
