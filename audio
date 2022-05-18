@@ -2,7 +2,7 @@
 
 # Simple dmenu prompt to set audio level
 
-currentlevel="$(amixer -c 1 get Master | grep '%' | awk '{print $4}')"
+currentlevel="$(pamixer --get-volume-human)"
 level="$(printf "   " | dmenu -p "$currentlevel - Audio level:")"
 
 # Check that input is purely numbers
@@ -14,7 +14,7 @@ esac
 
 if [ $level -le 100 ] && [ $level -ge 0 ];
 then
-	amixer -c 1 set Master "$level%" &> /dev/null
+	pamixer --set-volume "$level"
 else
 	return 1
 fi
