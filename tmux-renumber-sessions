@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+SESSIONS=$(tmux list-sessions -F '#S' | grep '^[0-9]\+$' | sort -n)
+NEW=0
+for OLD in $SESSIONS
+do
+  tmux rename-session -t $OLD $NEW
+  ((++NEW))
+done

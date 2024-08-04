@@ -7,3 +7,5 @@
 folder="$(ls $HOME/Pictures/ | dmenu -l 16 -i -p 'Image folder:')"
 [ $folder ] && image="$(ls $HOME/Pictures/$folder/* -1 | dmenu -l 16 -i -p 'Image:')"
 [ $image ] && imv -b '#282828' -- $image
+
+exit

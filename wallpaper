@@ -1,0 +1,10 @@
+#!/bin/sh
+while true; do
+  BG=$(ls ~/Pictures/forest/* | shuf -n 1)
+  # echo $BG
+  hyprctl hyprpaper preload "$BG"
+  hyprctl hyprpaper wallpaper "eDP-1, $BG"
+  # Update every five minutes
+  sleep 300
+  hyprctl hyprpaper unload all
+done

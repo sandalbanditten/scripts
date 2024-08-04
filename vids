@@ -6,3 +6,4 @@
 # smart way
 vid="$(ls $HOME/Videos/ -1 | dmenu -l 16 -i -p 'Watch:')"
 [ "$vid" ] && mpv -- "$HOME/Videos/$vid"
+exit

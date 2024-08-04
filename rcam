@@ -1,0 +1,2 @@
+#!/bin/sh
+ffmpeg -f v4l2 -video_size 1920x1080 -i /dev/video0 -c:v libx264 -preset ultrafast $env.HOME/Documents/Camera/$(date | sed 's/[^0-9]//g').mp4

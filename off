@@ -12,7 +12,9 @@ action="$(printf 'Shut Down\nReboot\nLock Screen\nQuit BSPWM\nReload BSPWM' | dm
 [ "$answer" = "Yes" ] && slock
 
 [ "$action" = "Quit BSPWM" ] && answer="$(printf 'Yes\nNo' | dmenu -l 2 -i -p "Confirm:")"
-[ "$answer" = "Yes" ] && bspc quit
+[ "$answer" = "Yes" ] && killall polybar && bspc quit
 
 [ "$action" = "Reload BSPWM" ] && answer="$(printf 'Yes\nNo' | dmenu -l 2 -i -p "Confirm:")"
 [ "$answer" = "Yes" ] && bspc wm -r
+
+exit

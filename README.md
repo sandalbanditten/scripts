@@ -15,7 +15,6 @@ Here is a brief explanation of what my scripts do:
 * scripts - will give a dmenu prompt of these scripts
 * unarch  - will extract from a number of archive formats
 * audio   - will give a dmenu prompt, where audio level can be input
-* pipes   - a screensaver, not written by me - [GitHub](https://github.com/pipeseroni/pipes.sh)
 
 ## License
 

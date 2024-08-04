@@ -5,16 +5,12 @@
 currentlevel="$(pamixer --get-volume-human)"
 level="$(printf "   " | dmenu -p "$currentlevel - Audio level:")"
 
-# Check that input is purely numbers
-case "${level#[+-]}" in
-	(*[!0123456789]*) return 1 ;;
-	('')              return 1 ;;
-	(*)               ;;
-esac
-
-if [ $level -le 100 ] && [ $level -ge 0 ];
+if [ "$level" -le 100 ] && [ "$level" -ge 0 ];
 then
 	pamixer --set-volume "$level"
 else
+	dunstify "Invalid volume level"
 	return 1
 fi
+
+return 0

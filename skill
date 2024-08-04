@@ -25,3 +25,4 @@ if [[ -n $selected ]]; then
 		echo "Script terminated." && exit 1
 	fi
 fi
+exit 0
